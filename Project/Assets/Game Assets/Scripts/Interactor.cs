@@ -8,43 +8,31 @@ public class Interactor : MonoBehaviour
     [SerializeField] private Transform uiButtonSpawnParent;
     public UnityEvent onEnteredZone, onInteracted, onLeftZone;
 
+    private bool playerInZone;
+
     private enum InteractButton { AButton,BButton }
 
     private GameObject spawnedButton;
 
     private InputActionReference aInput, bInput;
 
-    private void OnEnable()
-    {
-        
-    }
-
     private void BButtonPressed(InputAction.CallbackContext obj)
     {
-        onInteracted?.Invoke();
+        if(playerInZone) 
+            onInteracted?.Invoke();
     }
 
     private void AButtonPressed(InputAction.CallbackContext obj)
     {
-        onInteracted?.Invoke();
-        Test("venom");
-    }
-
-    private void OnDisable()
-    {
-        
-    }
-
-    public void Test(string textt)
-    {
-        Debug.Log(textt);
+        if (playerInZone)
+            onInteracted?.Invoke();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            
+            playerInZone = true;
             onEnteredZone?.Invoke();
             switch (interactButton)
             {
@@ -66,20 +54,25 @@ public class Interactor : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(spawnedButton!=null)
-            Destroy(spawnedButton);
-
-        onLeftZone?.Invoke();
-
-        switch(interactButton)
+        if (other.CompareTag("Player"))
         {
-            case InteractButton.AButton:
-                aInput = null;
-                break;
+            playerInZone = false;
+            if(spawnedButton!=null)
+                Destroy(spawnedButton);
 
-            case InteractButton.BButton:
-                bInput = null;
-                break;
+            onLeftZone?.Invoke();
+
+            switch(interactButton)
+            {
+                case InteractButton.AButton:
+                    aInput = null;
+                    break;
+
+                case InteractButton.BButton:
+                    bInput = null;
+                    break;
+            }
         }
+
     }
 }
