@@ -8,6 +8,7 @@ TagManager:
   - Dirt
   - Water
   - PetFood
+  - Flower
   layers:
   - Default
   - TransparentFX

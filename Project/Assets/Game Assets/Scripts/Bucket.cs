@@ -13,6 +13,8 @@ public class Bucket : MonoBehaviour
 
     private void Update()
     {
+        if (amountOfWater == 0)
+            water.gameObject.SetActive(false);
 
         if (transform.localRotation.x > 0.64f || transform.localRotation.x < -0.64f || transform.localRotation.z > 0.64f || transform.localRotation.z < -0.64f)
         {
@@ -66,6 +68,7 @@ public class Bucket : MonoBehaviour
     {
         if (readyToFill)
         {
+            water.gameObject.SetActive(true);
             readyToFill = false;
             while(amountOfWater < 1)
             {

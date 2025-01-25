@@ -11,5 +11,10 @@ public class Faucet : MonoBehaviour
         FindAnyObjectByType<Bucket>().readyToFill = isWaterTurnedOn;
         FindAnyObjectByType<Bucket>().StopAllCoroutines();
         water.SetActive(isWaterTurnedOn);
+
+        if(isWaterTurnedOn)
+            GetComponent<AudioSource>().Play();
+        else
+            GetComponent<AudioSource>().Stop();
     }
 }

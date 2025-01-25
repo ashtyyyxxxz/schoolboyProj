@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class Shelf : MonoBehaviour
@@ -6,6 +7,14 @@ public class Shelf : MonoBehaviour
 
     public int requiredAmount;
     public int currentAmount;
+
+    [SerializeField] private TextMeshProUGUI questStatusText;
+
+    private void Update()
+    {
+        if (isShelfFull)
+            questStatusText.text = "Статус: выполнено";
+    }
 
     private void OnTriggerEnter(Collider other)
     {
