@@ -694,7 +694,7 @@ Light:
   m_InnerSpotAngle: 170.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -2711,7 +2711,7 @@ Light:
   m_InnerSpotAngle: 170.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -2983,7 +2983,7 @@ Light:
   m_InnerSpotAngle: 170.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -3477,7 +3477,7 @@ Light:
   m_InnerSpotAngle: 170.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -3759,7 +3759,7 @@ Light:
   m_InnerSpotAngle: 170.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -12053,6 +12053,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particles: {fileID: 1563982643}
   triggerZone: {fileID: 1842428003}
+  questText: {fileID: 54541931}
 --- !u!65 &1842428003
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12886,7 +12887,7 @@ Light:
   m_InnerSpotAngle: 170.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -13874,7 +13875,7 @@ Light:
   m_InnerSpotAngle: 170.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1

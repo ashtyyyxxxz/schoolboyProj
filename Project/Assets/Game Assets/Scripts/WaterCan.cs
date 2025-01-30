@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class WaterCan : MonoBehaviour
 {
     [SerializeField] private GameObject particles;
     [SerializeField] private BoxCollider triggerZone;
+    [SerializeField] private TextMeshProUGUI questText;
     private bool isFilled = false;
 
     private void Update()
@@ -38,5 +40,6 @@ public class WaterCan : MonoBehaviour
     {
         yield return new WaitForSeconds(2.5f);
         flower.GetComponent<Flower>().checkmark.SetActive(true);
+        questText.text = "Статус: выполнено";
     }
 }
